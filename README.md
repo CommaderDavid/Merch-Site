@@ -26,14 +26,7 @@ This project uses the following technologies:
 -------------------
 
 <details>
-<summary> </summary>
-
-| Function | Input | Output |
-| :------------- | :------------- | :------------- |
-| |  |  |
-| |  |  |
-| |  |  |
-
+![Merch Site Diagram](/src/img/MerchSite.jpg)
 </details>
 
 -------------------
