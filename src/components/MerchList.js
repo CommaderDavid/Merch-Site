@@ -6,18 +6,20 @@ function MerchList(props) {
     return (
         <React.Fragment>
             <hr />
-            {props.merchList.map((merch, index) =>
+            {props.merchList.map((merch) =>
                 <Merch name={merch.name}
                     quantity={merch.quantity}
                     description={merch.description}
-                    key={index} />
+                    id={merch.id}
+                    key={merch.id} />
             )}
         </React.Fragment>
     );
 }
 
 MerchList.propTypes = {
-    merchList: PropTypes.array
+    merchList: PropTypes.array,
+    onMerchSelection: PropTypes.func
 };
 
 export default MerchList;
