@@ -2,6 +2,7 @@ import React from 'react';
 import MerchList from './MerchList';
 import NewMerchForm from './NewFormMerch';
 import MerchDetails from './MerchDetails';
+import EditMerchForm from './EditMerchForm';
 
 class MerchControl extends React.Component {
 
@@ -10,7 +11,8 @@ class MerchControl extends React.Component {
         this.state = {
             formVisibleOnPage: false,
             masterMerchList: [],
-            selectedMerch: null
+            selectedMerch: null,
+            editing: false
         };
     }
 
@@ -18,7 +20,8 @@ class MerchControl extends React.Component {
         if (this.state.selectedMerch != null) {
             this.setState({
                 formVisibleOnPage: false,
-                selectedMerch: null
+                selectedMerch: null,
+                editing: false
             });
         } else {
             this.setState(prevState => ({
@@ -48,12 +51,30 @@ class MerchControl extends React.Component {
         });
     }
 
+    handleEditClick = () => {
+        this.setState({ editing: true });
+    }
+
+    handleEditingMerchInList = (merchToEdit) => {
+        const editedMasterMerchList = this.state.masterMerchList
+            .filter(merch => merch.id !== this.state.selectedMerch.id)
+            .concat(merchToEdit);
+        this.setState({
+            masterMerchList: editedMasterMerchList,
+            editing: false,
+            selectedMerch: null
+        });
+    }
+
     render() {
         let currentlyVisableState = null;
         let buttonText = null;
 
-        if (this.state.selectedMerch != null) {
-            currentlyVisableState = <MerchDetails merch={this.state.selectedMerch} onClickingDelete={this.handleDeletingMerch} />;
+        if (this.state.editing) {
+            currentlyVisableState = <EditMerchForm merch={this.state.selectedMerch} onEditMerch={this.handleEditingMerchInList} />;
+            buttonText = "Return to Merch List";
+        } else if (this.state.selectedMerch != null) {
+            currentlyVisableState = <MerchDetails merch={this.state.selectedMerch} onClickingDelete={this.handleDeletingMerch} onClickingEdit={this.handleEditClick} />;
             buttonText = "Return to Merch List";
         } else if (this.state.formVisibleOnPage) {
             currentlyVisableState = <NewMerchForm onNewMerchCreation={this.handleAddingNewMerchToList} />;
