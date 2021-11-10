@@ -92,4 +92,4 @@ class MerchControl extends React.Component {
     }
 }
 
-export default TicketControl;
+export default MerchControl;
