@@ -1,11 +1,17 @@
 import React from "react";
-import MerchLogo from "./../img/MerchLogo.png";
+import merchLogo from "./../img/MerchLogo.png";
 
-function Header() {
+function Header(props) {
+    const HeaderStyle = {
+        backgroundColor: '#7cbfbd',
+        paddingTop: '50px',
+        paddingBottom: '20px',
+        'text-align': 'center'
+    }
     return (
-        <React.Fragment>
-            <img scr={MerchLogo} alt="A merch logo" />
-        </React.Fragment>
+        <div style={HeaderStyle}>
+            <img src={merchLogo} alt="A merch logo" />
+        </div>
     );
 }
 
