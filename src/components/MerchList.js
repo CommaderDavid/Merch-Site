@@ -8,6 +8,8 @@ function MerchList(props) {
             <hr />
             {props.merchList.map((merch) =>
                 <Merch
+                    onClickingBuy={props.onClickingBuy}
+                    onClickingRestock={props.onClickingRestock}
                     whenMerchClicked={props.onMerchSelection}
                     name={merch.name}
                     quantity={merch.quantity}
@@ -21,7 +23,9 @@ function MerchList(props) {
 
 MerchList.propTypes = {
     merchList: PropTypes.array,
-    onMerchSelection: PropTypes.func
+    onMerchSelection: PropTypes.func,
+    onClickingBuy: PropTypes.func,
+    onClickingRestock: PropTypes.func
 };
 
 export default MerchList;

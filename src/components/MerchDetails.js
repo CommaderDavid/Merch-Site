@@ -10,7 +10,7 @@ function MerchDetails(props) {
             <h3>{merch.name} - {merch.quantity}</h3>
             <p><em>{merch.description}</em></p>
             <button onClick={props.onClickingEdit}>Update Ticket</button>
-            <button onClick={() => onClickingDelete(merch.id)}>Close Merch</button>
+            <button onClick={() => onClickingDelete(merch.id)}>Cancel Merch</button>
             <hr />
         </React.Fragment>
     );
