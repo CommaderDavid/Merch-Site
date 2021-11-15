@@ -6,7 +6,7 @@ function Header(props) {
         backgroundColor: '#7cbfbd',
         paddingTop: '50px',
         paddingBottom: '20px',
-        'text-align': 'center'
+        textAlign: 'center'
     }
     return (
         <div style={HeaderStyle}>
