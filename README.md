@@ -1,11 +1,11 @@
 <br>
 <h1 align = "center">
-<b> </b>
+<b> Merch Site</b>
 </h1>
 
 <p align = "center">
-</p>
-<p align = "center"> Created: </p>
+This is a app maded to use React and CRUD</p>
+<p align = "center"> Created: October 24, 2021</p>
 
 <p align = "center">
  By David Boedigheimer
@@ -14,14 +14,17 @@
 --------------------
 
 ##   Description
-This program is designed to 
+This program is designed to create and show different merch for an merch store site. The user can create, edit, buy, restock, and delete any merch they create.
 --------------------
 
 ## 🛠️ Technologies Used
 
 This project uses the following technologies:
 
-- 
+- React
+- CSS
+- Javascript
+- CRUD
 
 -------------------
 
@@ -48,14 +51,18 @@ This project uses the following technologies:
 #### To run this project locally you will need:
 
 - **webpack :** 
+- **React :**
+
 #### To Download:
 
-Go to my GitHub repository here, , and click on the green 'Code' button to clone the repository, Open with GitHub Desktop OR Download the ZIP file
+Go to my GitHub repository here, https://github.com/CommaderDavid/Merch-Site, and click on the green 'Code' button to clone the repository, Open with GitHub Desktop OR Download the ZIP file
 
 #### Running/viewing application:
 
 1. Open your preferred terminal and navigate to `$cd "Insert name of folder for copy"`
-2. 
+2. Upload the copy from github to the empty folder
+3. Navigate to the `merch-site` with `cd`
+4. Run `npm run start` to start the application
 
 --------------------------
 
