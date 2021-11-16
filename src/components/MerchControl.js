@@ -80,8 +80,14 @@ class MerchControl extends React.Component {
         });
     }
 
-    handleRestockMerch = () => {
-
+    handleRestockMerch = (id) => {
+        const merchObject = this.state.masterMerchList.filter(merch => merch.id === id)[0];
+        const merchObjectIndex = this.state.masterMerchList.indexOf(merchObject);
+        const newMerchObjectRestock = { ...merchObject, quantity: merchObject.quantity + 8 };
+        const updateMerchStock = this.state.masterMerchList.splice(merchObjectIndex, 1, newMerchObjectRestock);
+        this.setState({
+            merchObject: updateMerchStock
+        });
     }
 
     render() {
@@ -98,7 +104,7 @@ class MerchControl extends React.Component {
             currentlyVisableState = <NewMerchForm onNewMerchCreation={this.handleAddingNewMerchToList} />;
             buttonText = "Return to Merch List";
         } else {
-            currentlyVisableState = <MerchList merchList={this.state.masterMerchList} onMerchSelection={this.handleChangingSelectedMerch} onClickingBuy={this.handleBuyMerch} />;
+            currentlyVisableState = <MerchList merchList={this.state.masterMerchList} onMerchSelection={this.handleChangingSelectedMerch} onClickingBuy={this.handleBuyMerch} onClickingRestock={this.handleRestockMerch} />;
             buttonText = "Add Merch";
         }
         return (
