@@ -25,7 +25,8 @@ MerchList.propTypes = {
     merchList: PropTypes.array,
     onMerchSelection: PropTypes.func,
     onClickingBuy: PropTypes.func,
-    onClickingRestock: PropTypes.func
+    onClickingRestock: PropTypes.func,
+    quantity: PropTypes.number
 };
 
 export default MerchList;

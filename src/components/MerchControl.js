@@ -70,13 +70,10 @@ class MerchControl extends React.Component {
         const merchObject = this.state.masterMerchList.filter(merch => merch.id === id)[0];
         const merchObjectIndex = this.state.masterMerchList.indexOf(merchObject);
         const newMerchObject = { ...merchObject, quantity: merchObject.quantity - 1 };
-        const updatedMerchList = this.state.masterMerchList.splice(merchObjectIndex, 1, newMerchObject);
-        console.log(merchObject, "merch object");
-        console.log(newMerchObject, "new");
-        console.log(merchObjectIndex, "merch index");
-        console.log(updatedMerchList, "updated");
+        const updatedMerchList = this.state.masterMerchList;
+        updatedMerchList[merchObjectIndex] = newMerchObject;
         this.setState({
-            merchObject: updatedMerchList
+            masterMerchList: updatedMerchList
         });
     }
 
@@ -84,9 +81,10 @@ class MerchControl extends React.Component {
         const merchObject = this.state.masterMerchList.filter(merch => merch.id === id)[0];
         const merchObjectIndex = this.state.masterMerchList.indexOf(merchObject);
         const newMerchObjectRestock = { ...merchObject, quantity: merchObject.quantity + 8 };
-        const updateMerchStock = this.state.masterMerchList.splice(merchObjectIndex, 1, newMerchObjectRestock);
+        const updateMerchStock = this.state.masterMerchList;
+        updateMerchStock[merchObjectIndex] = newMerchObjectRestock;
         this.setState({
-            merchObject: updateMerchStock
+            masterMerchList: updateMerchStock
         });
     }
 
