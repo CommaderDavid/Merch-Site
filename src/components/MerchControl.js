@@ -69,7 +69,9 @@ class MerchControl extends React.Component {
     handleBuyMerch = (id) => {
         const merchObject = this.state.masterMerchList.filter(merch => merch.id === id)[0];
         const merchObjectIndex = this.state.masterMerchList.indexOf(merchObject);
-        const newMerchObject = { ...merchObject, quantity: merchObject.quantity - 1 };
+        // const totalQuantity = props.quantity > 0 ? props.quantity : "Out of Stock"
+        const newMerchObject = merchObject.quantity > 0 ? { ...merchObject, quantity: merchObject.quantity - 1 } : merchObject;
+        console.log(newMerchObject);
         const updatedMerchList = this.state.masterMerchList;
         updatedMerchList[merchObjectIndex] = newMerchObject;
         this.setState({
